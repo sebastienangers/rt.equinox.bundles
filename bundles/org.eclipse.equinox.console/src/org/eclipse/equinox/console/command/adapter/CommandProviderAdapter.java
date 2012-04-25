@@ -53,7 +53,7 @@ public class CommandProviderAdapter {
 
 	private Method findCommand(Object commandName) {
 		for (Method command : commands) {
-			if (command.getName().equals(commandName))
+			if (command.getName().equalsIgnoreCase(commandName.toString()))
 				return command;
 		}
 		throw new IllegalArgumentException("Cannot find the command method for: " + commandName);
